@@ -1,18 +1,18 @@
 import sys
 from ner.components.data_ingestion import DataIngestion
-#from ner.components.data_transforamation import DataTransformation
+from ner.components.data_transforamation import DataTransformation
 from ner.configuration.gcloud import GCloud
 from ner.constants import *
 
 from ner.entity.artifact_entity import (
-    DataIngestionArtifacts
-    #DataTransformationArtifacts,
+    DataIngestionArtifacts,
+    DataTransformationArtifacts
     )
 
 
 from ner.entity.config_entity import (
-    DataIngestionConfig
-    #DataTransformationConfig
+    DataIngestionConfig,
+    DataTransformationConfig
 )
 
 
@@ -23,7 +23,7 @@ from ner.logger import logging
 class TrainPipeline:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
-        #self.data_transformation_config = DataTransformationConfig()
+        self.data_transformation_config = DataTransformationConfig()
         self.gcloud = GCloud()
 
     
@@ -47,7 +47,7 @@ class TrainPipeline:
         
 
 
-    '''
+   
      # This method is used to start the data validation
     def start_data_transformation(
         self, data_ingestion_artifact: DataIngestionArtifacts
@@ -73,7 +73,7 @@ class TrainPipeline:
 
         except Exception as e:
             raise NerException(e, sys) from e
-'''    
+   
     
 
       # This method is used to start the training pipeline
@@ -81,8 +81,8 @@ class TrainPipeline:
         try:
             logging.info("Started Model training >>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
             data_ingestion_artifact = self.start_data_ingestion()
-            #data_transformation_artifacts = self.start_data_transformation(
-                #data_ingestion_artifact=data_ingestion_artifact)
+            data_transformation_artifacts = self.start_data_transformation(
+                data_ingestion_artifact=data_ingestion_artifact)
 
         except Exception as e:
             raise NerException(e, sys) from e
