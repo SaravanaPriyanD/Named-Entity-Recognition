@@ -56,3 +56,5 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
+## Test application
+## http://localhost:8080/docs
