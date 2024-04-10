@@ -6,7 +6,7 @@ sudo apt-get upgrade -y
 # Setup Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo usermod -aG docker icloud
+sudo usermod -aG docker saravpriyan
 newgrp docker
 
 
@@ -39,7 +39,7 @@ sudo nano /etc/opt/circleci/launch-agent-config.yaml
 
 # Add API in the file and change permissions
 api:
-    auth_token: fe1934e387e8da6bc6e1b7370e2b543e71adcdcb36ae5df015ddfba702654bfcd9d31078e3fbbfd2
+    auth_token: 80897c2b19ddf7ac93e6247219b5dac55336051018f45ff38e9c573a92cd2cea47bc1ebd0a46eae0
 
 runner:
     name: self-hosted
