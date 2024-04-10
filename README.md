@@ -57,4 +57,20 @@ pip install -r requirements.txt
 python app.py
 ```
 ## Test application
-## http://localhost:8080/docs
+ - http://localhost:8080/docs
+
+## GCP CICD Deployment with CircleCI:
+
+ - artifact registry --> create a repository
+ - change line 42,50,72,76,54 in circleci config
+ - Open circleci --> create a project
+
+## Set Environment variables in CircleCI
+ - GCLOUD_SERVICE_KEY --> service account
+ - GOOGLE_COMPUTE_ZONE = asia-south1
+ - GOOGLE_PROJECT_ID
+
+
+## Create a VM instances & setup scripts
+
+
